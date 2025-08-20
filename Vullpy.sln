@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vullpy.API", "Vullpy.API\Vullpy.API.csproj", "{1FC9C1BA-717A-45C2-9549-08D4FBC30D66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vullpy.Application", "Vullpy.Application\Vullpy.Application.csproj", "{60C3E3C9-70B7-4FF4-BB49-96D55C04CCA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vullpy.Domain", "Vullpy.Domain\Vullpy.Domain.csproj", "{BF91070A-CDA7-4C51-89E3-58F989E3CD6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vullpy.Infrastructure", "Vullpy.Infrastructure\Vullpy.Infrastructure.csproj", "{A2AF2BAB-CDE0-48B7-9554-DA3DBC1D14C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vullpy.IoC", "Vullpy.IoC\Vullpy.IoC.csproj", "{C0765D7F-00B0-4C67-ADF4-D07FE66D362F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vullpy.Tests", "Vullpy.Tests\Vullpy.Tests.csproj", "{2BF8B87E-73B7-438B-B19D-972271163DE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FC9C1BA-717A-45C2-9549-08D4FBC30D66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FC9C1BA-717A-45C2-9549-08D4FBC30D66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FC9C1BA-717A-45C2-9549-08D4FBC30D66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FC9C1BA-717A-45C2-9549-08D4FBC30D66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60C3E3C9-70B7-4FF4-BB49-96D55C04CCA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60C3E3C9-70B7-4FF4-BB49-96D55C04CCA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60C3E3C9-70B7-4FF4-BB49-96D55C04CCA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60C3E3C9-70B7-4FF4-BB49-96D55C04CCA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF91070A-CDA7-4C51-89E3-58F989E3CD6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF91070A-CDA7-4C51-89E3-58F989E3CD6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF91070A-CDA7-4C51-89E3-58F989E3CD6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF91070A-CDA7-4C51-89E3-58F989E3CD6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2AF2BAB-CDE0-48B7-9554-DA3DBC1D14C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2AF2BAB-CDE0-48B7-9554-DA3DBC1D14C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2AF2BAB-CDE0-48B7-9554-DA3DBC1D14C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2AF2BAB-CDE0-48B7-9554-DA3DBC1D14C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0765D7F-00B0-4C67-ADF4-D07FE66D362F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0765D7F-00B0-4C67-ADF4-D07FE66D362F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0765D7F-00B0-4C67-ADF4-D07FE66D362F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0765D7F-00B0-4C67-ADF4-D07FE66D362F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BF8B87E-73B7-438B-B19D-972271163DE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BF8B87E-73B7-438B-B19D-972271163DE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BF8B87E-73B7-438B-B19D-972271163DE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BF8B87E-73B7-438B-B19D-972271163DE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
