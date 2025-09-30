@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Vullpy.Domain\Vullpy.Domain.csproj" />
     <ProjectReference Include="..\Vullpy.Infrastructure\Vullpy.Infrastructure.csproj" />
+    <ProjectReference Include="..\Vullpy.Application\Vullpy.Application.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

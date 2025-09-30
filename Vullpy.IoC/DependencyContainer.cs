@@ -2,10 +2,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-using Vulipy.Infrastructure.Data;
-
 using Vullpy.Infrastructure.Data;
-
+using Vullpy.Application.Interfaces.Persistence;
 namespace Vullpy.IoC;
 
 public static class DependencyContainer
@@ -38,7 +36,7 @@ public static class DependencyContainer
             }
         });
 
-        services.AddScoped<UnitOfWork>();
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         return services;
     }

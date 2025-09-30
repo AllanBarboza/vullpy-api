@@ -1,11 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
-using Vullpy.Infrastructure.Data;
+using Vullpy.Application.Interfaces.Persistence;
 
-namespace Vulipy.Infrastructure.Data;
+namespace Vullpy.Infrastructure.Data;
 
-public class UnitOfWork : IDisposable
+public class UnitOfWork : IUnitOfWork
 {
     private readonly ApplicationDbContext _context;
     private IDbContextTransaction? _transaction;
@@ -16,10 +16,9 @@ public class UnitOfWork : IDisposable
         _context = context;
     }
 
-    public async Task<IDbContextTransaction> BeginTransactionAsync()
+    public async Task BeginTransactionAsync()
     {
         _transaction = await _context.Database.BeginTransactionAsync();
-        return _transaction;
     }
 
     public async Task CommitAsync()
