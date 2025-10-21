@@ -362,3 +362,13 @@ dotnet_naming_style.s_camelcase.required_suffix =
 dotnet_naming_style.s_camelcase.word_separator = 
 dotnet_naming_style.s_camelcase.capitalization = camel_case
 
+# Quality and good practices
+dotnet_diagnostic.CA1062.severity = warning
+dotnet_diagnostic.CA2007.severity = warning
+dotnet_diagnostic.CA1031.severity = warning
+dotnet_diagnostic.CA2100.severity = warning
+
+# Nullable warnings
+dotnet_diagnostic.CS8618.severity = warning  
+dotnet_diagnostic.CS8602.severity = warning 
+dotnet_diagnostic.CS8604.severity = warning  
