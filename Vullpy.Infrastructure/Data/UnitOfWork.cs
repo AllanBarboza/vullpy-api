@@ -18,30 +18,30 @@ public class UnitOfWork : IUnitOfWork
 
     public async Task BeginTransactionAsync()
     {
-        _transaction = await _context.Database.BeginTransactionAsync();
+        _transaction = await _context.Database.BeginTransactionAsync().ConfigureAwait(false);
     }
 
     public async Task CommitAsync()
     {
         try
         {
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync().ConfigureAwait(false);
 
             if (_transaction != null)
             {
-                await _transaction.CommitAsync();
+                await _transaction.CommitAsync().ConfigureAwait(false);
             }
         }
         catch
         {
-            await RollbackAsync();
+            await RollbackAsync().ConfigureAwait(false);
             throw;
         }
         finally
         {
             if (_transaction != null)
             {
-                await _transaction.DisposeAsync();
+                await _transaction.DisposeAsync().ConfigureAwait(false);
                 _transaction = null;
             }
         }
@@ -51,8 +51,8 @@ public class UnitOfWork : IUnitOfWork
     {
         if (_transaction != null)
         {
-            await _transaction.RollbackAsync();
-            await _transaction.DisposeAsync();
+            await _transaction.RollbackAsync().ConfigureAwait(false);
+            await _transaction.DisposeAsync().ConfigureAwait(false);
             _transaction = null;
         }
 
@@ -69,7 +69,7 @@ public class UnitOfWork : IUnitOfWork
                     break;
                 case EntityState.Modified:
                 case EntityState.Deleted:
-                    await entry.ReloadAsync();
+                    await entry.ReloadAsync().ConfigureAwait(false);
                     break;
             }
         }
