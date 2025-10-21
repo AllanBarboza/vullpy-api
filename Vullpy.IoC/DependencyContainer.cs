@@ -2,8 +2,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-using Vullpy.Infrastructure.Data;
 using Vullpy.Application.Interfaces.Persistence;
+using Vullpy.Infrastructure.Data;
 namespace Vullpy.IoC;
 
 public static class DependencyContainer
