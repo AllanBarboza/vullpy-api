@@ -3,9 +3,15 @@
   <ItemGroup>
     <ProjectReference Include="..\Vullpy.Domain\Vullpy.Domain.csproj" />
     <ProjectReference Include="..\Vullpy.Infrastructure\Vullpy.Infrastructure.csproj" />
+    <ProjectReference Include="..\Vullpy.Application\Vullpy.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" />
   </ItemGroup>
 
   <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
