@@ -20,10 +20,10 @@ namespace MyApi.Tests
         {
             var client = _factory.CreateClient();
 
-            var response = await client.GetAsync("/health").ConfigureAwait(false);
+            var response = await client.GetAsync("/health");
 
             response.EnsureSuccessStatusCode();
-            var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var content = await response.Content.ReadAsStringAsync();
             Assert.Equal("OK", content);
         }
     }
