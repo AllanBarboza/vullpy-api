@@ -1,20 +1,23 @@
 name: Docker Image CI Dev
 on:
   push:
-    branches: [ "dev" ]
+    branches: ["dev"]
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: Login Dockerhub
-      env: 
-        DOCKER_USERNAME: ${{secrets.VULLPY_DOCKER_USERNAME}}
-        DOCKER_PASSWORD: ${{secrets.VULLPY_DOCKER_PASSWORD}}
+    environment: VULLPY_DEV
 
-    - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-    
-    - name: Build the Docker image
-      run: docker build -t vullpy-dev-ci-pipeline .
-    - name: Push to Dockerhub
-      run: docker push varsubham/vullpy-dev-ci-pipeline:latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Login Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.VULLPY_DOCKER_USERNAME }}
+          password: ${{ secrets.VULLPY_DOCKER_PASSWORD }}
+
+      - name: Build image
+        run: docker build -t varsubham/vullpy-dev-ci-pipeline:latest .
+
+      - name: Push image
+        run: docker push varsubham/vullpy-dev-ci-pipeline:latest
