@@ -1,24 +1,34 @@
-name: .NET
+name: CI .NET Validation
 
 on:
-  push:
-    branches: ["dev", "main"]
   pull_request:
     branches: ["dev", "main"]
 
 jobs:
-  build:
+  build-test:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
+
+      - name: Cache NuGet
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+
       - name: Restore dependencies
         run: dotnet restore
+
       - name: Build
         run: dotnet build --no-restore --configuration Release
+
       - name: Test
-        run: dotnet test --verbosity normal
+        run: dotnet test --no-build --configuration Release --verbosity normal

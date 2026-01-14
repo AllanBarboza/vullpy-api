@@ -1,0 +1,31 @@
+name: Docker Image CI Dev
+
+on:
+  push:
+    branches: ["dev"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: VULLPY_DEV
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Login Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.VULLPY_DOCKER_USERNAME }}
+          password: ${{ secrets.VULLPY_DOCKER_PASSWORD }}
+
+      - name: Build image (dual tags)
+        run: |
+          docker build \
+            -t allanbarboza/vullpy-dev-ci-pipeline:dev \
+            -t allanbarboza/vullpy-dev-ci-pipeline:dev-${{ github.sha }} .
+
+      - name: Push image (dev)
+        run: docker push allanbarboza/vullpy-dev-ci-pipeline:dev
+
+      - name: Push image (commit)
+        run: docker push allanbarboza/vullpy-dev-ci-pipeline:dev-${{ github.sha }}
